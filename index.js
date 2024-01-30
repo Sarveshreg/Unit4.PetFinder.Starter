@@ -9,10 +9,11 @@ const PORT = 8080;
 
 // GET - / - returns homepage
 // create a homepage in the frontend folder and serve it
-app.get('/', (req, res) => {
-    // serve up the public folder as static index.html file
-    res.sendFile(path.join(__dirname,"../Frontend/vite-project/src/main.jsx"))
-});
+// app.get('/', (req, res) => {
+//     // serve up the public folder as static index.html file
+//     res.sendFile(path.join(__dirname,"../Frontend/vite-project/src/main.jsx"))
+// });
+app.use(express.static("dist"));
 
 app.get('/api', (req, res) => {
     res.send('Hello World!');
